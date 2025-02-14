@@ -1,10 +1,10 @@
-title: Engineering AI Blog
+title: AI Engineering Blog
 description: Posts about AI Engineering
-
+url: https://eai.one
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
-
-
-google_analytics: G-BB4KPHFR84
+  - jekyll-feed
+  - jekyll-sitemap
 show_downloads: false
+google_analytics: G-BB4KPHFR84
