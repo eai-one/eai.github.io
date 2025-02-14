@@ -4,8 +4,6 @@ description: Posts about AI Engineering
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-sitemap
 
 
 google_analytics: G-BB4KPHFR84
