@@ -1,6 +1,12 @@
-theme: minima
-
 title: Engineering AI Blog
+description: Posts about AI Engineering
 
-show_downloads: false
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+
+
 google_analytics: G-BB4KPHFR84
+show_downloads: false
