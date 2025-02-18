@@ -4,9 +4,5 @@ url: https://eai.one
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-sitemap
 show_downloads: false
 google_analytics: G-BB4KPHFR84
-titles_from_headings:
-  strip_title: true
