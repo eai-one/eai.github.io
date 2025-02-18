@@ -1,8 +1,10 @@
 title: Embodied AI Blog
-description: Posts about Embodied AI: A path to AGI
+description: Posts about Embodied AI | A path to AGI
 url: https://eai.one
 remote_theme: jekyll/minima
-plugins:
+plugins: 
   - jekyll-remote-theme
 show_downloads: false
 google_analytics: G-BB4KPHFR84
+titles_from_headings:
+  strip_title: true
