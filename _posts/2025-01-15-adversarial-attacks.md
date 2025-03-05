@@ -6,9 +6,7 @@ comments: false
 categories: embodied-ai adversarial-attacks
 ---
 
-**What Are Adversarial Attacks?**
-
-Over the past few years, researchers have demonstrated various ways to fool state-of-the-art systems. In one high-profile study, carefully crafted stickers on traffic signs confused self-driving cars. In another, hackers manipulated the LED lights on a robot vacuum, tricking its camera-based obstacle detector. These are few real world examples for adversarial attacks.
+**What Are Adversarial Attacks?** Over the past few years, researchers have demonstrated various ways to fool state-of-the-art systems. In one high-profile study, carefully crafted stickers on traffic signs confused self-driving cars. In another, hackers manipulated the LED lights on a robot vacuum, tricking its camera-based obstacle detector. These are few real world examples for adversarial attacks.
 
 At their core, adversarial attacks are subtle manipulations designed to exploit the blind spots of machine learning models, especially those handling high-dimensional data like images, audio, or sensor readings. These manipulations might be as small as adding pixel-level noise to an image or placing an inconspicuous sticker on a traffic sign. The twist? Despite looking almost identical to the human eye, these changes can cause a well-trained neural network to completely misinterpret the data.
 

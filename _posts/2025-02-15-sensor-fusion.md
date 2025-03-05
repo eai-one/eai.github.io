@@ -6,10 +6,8 @@ comments: false
 categories: embodied-ai sensor-fusion
 ---
 
-**Sensor Fusion in Embodied AI**
-
+**Sensor Fusion in Embodied AI:**
 **High-Level Overview**
-
 Embodied AI agents (robots, autonomous vehicles, etc.) are equipped with multiple sensors (e.g. cameras, LiDAR, radar, ultrasonic, IMU, GPS) to perceive their environment. Sensor fusion is the process of combining data from these sensors to produce a more accurate or robust understanding than any single sensor could provide. Each sensor modality has strengths and limitations – for example, cameras provide rich color/texture but falter in low light or glare; LiDAR yields precise 3D depth but can struggle in fog or rain; radar works in all weather but has low resolution; and ultrasonic sensors handle only short ranges. By fusing their outputs, an embodied system can compensate for individual weaknesses and reduce uncertainty, achieving a more complete and reliable perception of the world. In practice, sensor fusion is multimodal: an AI might merge vision with sound, touch, or motion data, reflecting how humans naturally integrate sight, hearing, and touch for better situational awareness . This fused sensing enables an embodied agent to interpret complex, dynamic environments and make informed decisions or actions that are far more robust than those based on any single source of input.
 
 Various sensor modalities used in AI systems provide complementary information. For instance, standard optical cameras offer human-like vision for recognizing objects, thermal cameras detect heat patterns (useful in darkness), LiDAR scanners map precise 3D structure, radar gives reliable range/velocity in all weather, microphone arrays capture audio cues, and emerging event-based vision sensors record rapid pixel-level changes. An embodied AI fuses such multi-sensor data to build a richer understanding of its surroundings, much like humans combine sight, sound, and other senses.
