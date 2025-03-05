@@ -1,18 +1,18 @@
 ---
 layout: post
 title: "Adversarial Attacks"
-date: 2025-02-01 00:00:00 +0900
+date: 2025-01-15 00:00:00 +0900
 comments: false
 categories: embodied-ai adversarial-attacks
 ---
 
-What Are Adversarial Attacks?
+**What Are Adversarial Attacks?**
 
 Over the past few years, researchers have demonstrated various ways to fool state-of-the-art systems. In one high-profile study, carefully crafted stickers on traffic signs confused self-driving cars. In another, hackers manipulated the LED lights on a robot vacuum, tricking its camera-based obstacle detector. These are few real world examples for adversarial attacks.
 
 At their core, adversarial attacks are subtle manipulations designed to exploit the blind spots of machine learning models, especially those handling high-dimensional data like images, audio, or sensor readings. These manipulations might be as small as adding pixel-level noise to an image or placing an inconspicuous sticker on a traffic sign. The twist? Despite looking almost identical to the human eye, these changes can cause a well-trained neural network to completely misinterpret the data.
 
-Why Should We Care?
+**Why Should We Care?**
 
 •	Safety Implications: When a robot can’t recognize a crucial object or misreads a sign, it can make dangerous decisions. Imagine an autonomous car failing to stop at a real-world stop sign that’s been tampered with, or a household robot mixing up a cleaning solution because of a misread label.
 
@@ -20,7 +20,7 @@ Why Should We Care?
 
 •	Eroded Trust: If people discover that a few strategically placed patterns can compromise a robot’s function, the entire premise of safe, reliable AI-driven assistance takes a huge hit. Public acceptance of embodied AI hinges on our ability to mitigate these vulnerabilities.
 
-How Do These Attacks Work?
+**How Do These Attacks Work?**
 
 Most adversarial attacks exploit the fact that AI models learn patterns that aren’t always “intuitive” to humans. By nudging input data in specific, mathematically derived directions, attackers can steer a network’s outputs in their favor. In robotics, the challenge is twofold:
 	
@@ -29,7 +29,9 @@ Most adversarial attacks exploit the fact that AI models learn patterns that are
 2.	Digital Interference: Data streaming from sensors can be intercepted or altered on the fly, leading to misclassifications and errors.
 
 
-Defending Against Adversarial Attacks
+
+**Defending Against Adversarial Attacks**
+
 1.	Robust Training: Incorporate adversarial examples into training datasets. This helps a model learn to recognize and reject these sneaky inputs.
 
 2.	Sensor Fusion: Rely on more than one modality. Vision alone is easier to fool than a system that also factors in Lidar, depth sensors, or inertial data.
