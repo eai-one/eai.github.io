@@ -1,15 +1,13 @@
 ---
 layout: default
 title: Blog
-permalink: /blog
+permalink: /blog/
 ---
 <h1>Latest Posts</h1>
 
-<ul>
+{% if page.url == "/blog/" %}
   {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </li>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt }}</p>
   {% endfor %}
-</ul>
+{% endif %}
