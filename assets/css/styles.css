@@ -1,0 +1,28 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #383838;
+    background-color: aliceblue
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+@keyframes bottomToTop {
+    from {
+        transform: translateY(5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.title {
+    font-size: 1.5em;
+    color: gray;
+    animation: bottomToTop 1s ease-out;
+}

@@ -1,0 +1,11 @@
+<nav>
+    <a href="{{ site.baseurl }}/" {% if page.url == "/" %}style="color: red;"{% endif %}>
+      Home
+    </a>
+    <a href="{{ site.baseurl }}/blog" class="read-blog" {% if page.url == "/blog" %}style="color: red;"{% endif %}>
+      Read Blog
+    </a>
+    <a href="{{ site.baseurl }}/about" {% if page.url == "/about" %}style="color: red;"{% endif %}>
+      About
+    </a>
+  </nav>

@@ -1,13 +1,40 @@
-title: Embodied AI Blog
+title: EAI Blog
 description: Posts about Embodied AI | A path to AGI
+baseurl: ""
 url: https://eai.one
-remote_theme: jekyll/minima
-plugins: 
-  - jekyll-remote-theme
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+minima:
+  date_format: "%Y-%m-%d"
+
+header_pages:
+  - _pages/blog.md
+  - _pages/about.md
+
+show_excerpts: true
 show_downloads: false
+
 google_analytics: G-BB4KPHFR84
 titles_from_headings:
   strip_title: true
-header_pages:
-  - blog.md
-show_excerpts: true
+
+include:
+    - _pages
+
+exclude:
+  - .gitignore
+  - .jekyll-cache/
+  - .sass-cache/
+  - docker-compose.yml
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - LICENCSE
+  - CNAME
+  - README.md
