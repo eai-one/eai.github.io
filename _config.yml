@@ -1,4 +1,4 @@
-title: EAI Blog
+title: EAI.1 Blog
 description: Posts about Embodied AI | A path to AGI
 baseurl: ""
 url: https://eai.one
@@ -9,6 +9,15 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate-v2
+
+# Pagination Settings
+paginate_path: /blog/page:num
+pagination:
+  enabled: true
+  per_page: 3
+  sort_field: 'date'
+  sort_reverse: true
 
 minima:
   date_format: "%Y-%m-%d"
@@ -16,6 +25,7 @@ minima:
 header_pages:
   - _pages/blog.md
   - _pages/about.md
+
 
 show_excerpts: true
 show_downloads: false

@@ -6,7 +6,7 @@ comments: false
 categories: embodied-ai computer-vision
 ---
 
-**Computer Vision** Human beings have survived by relying on rapid visual cues—detecting subtle movements in tall grass, discerning edible plants from poisonous ones, and identifying a friend from foe in split seconds. **Sight** was the original survival mechanism granting us the power to parse our environment swiftly and accurately. Today, machines can approximate that life-preserving instinct through computer vision.
+**Computer Vision**: Human beings have survived by relying on rapid visual cues—detecting subtle movements in tall grass, discerning edible plants from poisonous ones, and identifying a friend from foe in split seconds. **Sight** was the original survival mechanism granting us the power to parse our environment swiftly and accurately. Today, machines can approximate that life-preserving instinct through computer vision.
 
 From a strictly evolutionary standpoint, vision developed under pressure to detect predators or locate resources. Under the hood, human eyes process light through photoreceptors (rods and cones) and feed signals into specialized neural pathways (like the magnocellular and parvocellular streams) that interpret motion, color, and depth. Early computer vision research borrowed inspiration from these biological cues, exploring Gabor filters, edge detectors, and pyramidal representations to mimic how early visual cortex layers process shapes and contours.
 

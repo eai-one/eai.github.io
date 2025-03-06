@@ -4,6 +4,9 @@
     <div class="wrapper">
       <div class="footer-col-wrapper">
         <div class="footer-col footer-col-1">
+          <br>
+          <hr>
+          <br>
               {%- if site.author -%}
                 {{ site.author | escape }}
               {%- else -%}
@@ -13,12 +16,12 @@
               {%- if site.email -%}
               <a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
               {%- endif -%}
-              <p>{{- site.description | escape -}}</p>
+              {{- site.description | escape -}}
         </div>
         <div class="footer-col footer-col-2">
           {%- include social.html -%}
         </div>
-
+        <p>&copy; {{ 'now' | date: "%Y" }} EAI.1 All rights reserved.</p>
       </div>
     </div>
   </footer>

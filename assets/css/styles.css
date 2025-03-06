@@ -86,3 +86,72 @@ a:active {
     font-weight: bold;
     border-bottom: 2px solid #B8860B;
 }
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px; /* Increase text size slightly for readability */
+        line-height: 1.6; /* Improve spacing between lines */
+        padding: 10px;
+    }
+
+    /* Adjust Navigation for Mobile */
+    .navbar ul {
+        flex-direction: column; /* Stack navigation items */
+        gap: 10px; /* Reduce space between items */
+        text-align: center;
+    }
+
+    .navbar li {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 12px;
+        font-size: 16px; /* Slightly smaller font size for mobile */
+    }
+
+    /* Make blog content more readable */
+    .content {
+        padding: 15px;
+        max-width: 100%; /* Ensure it fits within the screen */
+    }
+
+    .title {
+        font-size: 1.2em; /* Reduce title size for better fitting */
+    }
+
+    /* Ensure images are responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto; /* Center images */
+    }
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 5px;
+    text-decoration: none;
+    background-color: #B8860B;
+    color: #FFFFFF;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.pagination a:hover {
+    background-color: #DAA520;
+}
+
+.pagination span {
+    font-weight: bold;
+    padding: 8px 12px;
+}
