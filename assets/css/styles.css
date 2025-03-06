@@ -90,7 +90,7 @@ a:active {
 /* Responsive Design for Mobile */
 @media screen and (max-width: 768px) {
     body {
-        font-size: 16px; /* Increase text size slightly for readability */
+        font-size: 17px; /* Increase text size slightly for readability */
         line-height: 1.6; /* Improve spacing between lines */
         padding: 10px;
     }
