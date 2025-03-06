@@ -2,11 +2,6 @@
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: aliceblue;
-    background-color: #383838;
-}
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
@@ -25,4 +20,31 @@ body {
     font-size: 1.5em;
     color: gray;
     animation: bottomToTop 1s ease-out;
+}
+
+/* Fusion of Modern Dark & Elegant Theme */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #EAEAEA; /* Soft white for readability */
+    background-color: #383838; /* Dark gray for a modern look */
+}
+
+/* Link Styling */
+a {
+    color: #B8860B; /* Deep gold for unvisited links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #DAA520; /* Lighter gold for hover */
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #8B6508; /* Darker gold for visited links */
+}
+
+a:active {
+    color: #D2691E; /* Burnt orange for active state */
 }
