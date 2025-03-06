@@ -11,16 +11,6 @@ An area of artificial intelligence focused on agents that interact with the worl
 </div>
 </section>
 
-<section style="text-align: center; padding: 50px 20px; background: linear-gradient(to right, #1a1a1a, #333); color: white;">
-    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Welcome to Embodied AI Blog</h1>
-    <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
-        Exploring the intersection of artificial intelligence and physical interaction with the world.
-    </p>
-    <a href="/about" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background: #f0a500; color: #fff; text-decoration: none; font-size: 1.1rem; border-radius: 5px;">
-        Learn More
-    </a>
-</section>
-
 <section style="padding: 40px 20px;">
     <h2 style="text-align: left; font-size: 1.5rem;">Latest Posts</h2>
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
@@ -36,3 +26,14 @@ An area of artificial intelligence focused on agents that interact with the worl
 
 
     {% endfor %}
+
+
+<section style="text-align: center; padding: 50px 20px; background: linear-gradient(to right, #1a1a1a, #333); color: white;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Welcome to Embodied AI Blog</h1>
+    <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
+        Exploring the intersection of artificial intelligence and physical interaction with the world.
+    </p>
+    <a href="/about" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background: #f0a500; color: #fff; text-decoration: none; font-size: 1.1rem; border-radius: 5px;">
+        Learn More
+    </a>
+</section>
