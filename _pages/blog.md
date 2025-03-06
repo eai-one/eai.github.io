@@ -2,12 +2,10 @@
 layout: default
 title: Blog
 permalink: /blog/
-pagination: true
 ---
 
 <h1>Latest Posts</h1>
 
- {% if paginator.posts %}
   <ul>
     {% for post in paginator.posts %}
       <li>
@@ -29,4 +27,4 @@ pagination: true
       <a href="{{ paginator.next_page_path }}" class="next">Next &raquo;</a>
     {% endif %}
   </div>
- {% endif %}
+
