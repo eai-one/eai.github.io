@@ -9,10 +9,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate-v2
+  - jekyll-paginate
 
 # Pagination Settings
 paginate_path: /blog/page:num
+paginate: 3
 pagination:
   enabled: true
   per_page: 3

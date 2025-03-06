@@ -15,7 +15,7 @@ An area of artificial intelligence focused on agents that interact with the worl
     <h2 style="text-align: left; font-size: 1.5rem;">Latest Posts</h2>
     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
 
-    {% for post in site.posts limit:2 %}
+    {% for post in site.posts limit:3 %}
 
     <div style="max-width: 500px; padding: 15px; text-align: center;">
         <h3>

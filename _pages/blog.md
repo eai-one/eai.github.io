@@ -2,11 +2,7 @@
 layout: default
 title: Blog
 permalink: /blog/
-pagination:
-  enabled: true
-  per_page: 3
-  permalink: '/blog/page/:num/'
-  title: ':title - page :num'
+pagination: true
 ---
 
 <h1>Latest Posts</h1>
