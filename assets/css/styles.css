@@ -1,8 +1,6 @@
 ---
 ---
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 @keyframes bottomToTop {
@@ -18,15 +16,15 @@
 
 .title {
     font-size: 1.5em;
-    color: gray;
+    color: #333333; /* Dark charcoal for contrast */
     animation: bottomToTop 1s ease-out;
 }
 
-/* Fusion of Modern Dark & Elegant Theme */
+/* Elegant Theme */
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #EAEAEA; /* Soft white for readability */
-    background-color: #383838; /* Dark gray for a modern look */
+    font-family: 'Merriweather', serif; /* More professional and readable */
+    color: #333333; /* Dark text for better readability */
+    background-color: #F5F5DC; /* Soft beige background for an elegant feel */
 }
 
 /* Link Styling */
@@ -47,4 +45,44 @@ a:visited {
 
 a:active {
     color: #D2691E; /* Burnt orange for active state */
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    text-align: center;
+    background-color: #F5F5DC; /* Elegant beige */
+    padding: 15px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centers the navigation */
+    gap: 30px; /* Ensures good spacing */
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #B8860B; /* Deep gold */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: #DAA520; /* Lighter gold */
+    color: #FFFFFF; /* White text on hover */
+}
+
+.navbar .active {
+    font-weight: bold;
+    border-bottom: 2px solid #B8860B;
 }
