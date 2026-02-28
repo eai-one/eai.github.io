@@ -2,10 +2,45 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="/assets/css/styles.css">
   {% feed_meta %}
-    {% seo %}
-{% if site.google_analytics -%}
+  <link rel="alternate" type="application/feed+json" title="{{ site.title }} - JSON Feed"
+    href="{{ site.url }}/feed.json" />
+  {% seo %}
+  {% if site.google_analytics -%}
   <!-- Begin Google Analytics -->
   {% include google-analytics.html %}
   <!-- End Google Analytics -->
-{%- endif %}
+  {%- endif %}
+
+  <!-- Web Model Context Protocol (WebMCP) Declaration -->
+  <script type="application/mcp+json">
+  {
+    "mcpVersion": "1.0",
+    "tools": [
+      {
+        "name": "search_blog",
+        "description": "Searches the EAI blog by redirecting the query to Google with a site:eai.one filter. Use this to find articles by topic.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The search term to query the blog for."
+            }
+          },
+          "required": ["query"]
+        },
+        "urlTemplate": "https://www.google.com/search?q=site:eai.one+{query}"
+      },
+      {
+        "name": "get_feed",
+        "description": "Fetches the full XML feed of the latest blog posts. This contains the content of all recent articles.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "urlTemplate": "https://eai.one/feed.xml"
+      }
+    ]
+  }
+  </script>
 </head>

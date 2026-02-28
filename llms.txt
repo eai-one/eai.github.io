@@ -1,0 +1,20 @@
+---
+layout: null
+---
+# EAI.1 Blog
+
+> Posts about Embodied AI | A path to AGI
+
+This is the official blog for Embodied AI concepts, tutorials, and deep-dives.
+
+## Links
+
+- [Official Website](https://eai.one)
+- [Full Blog Corpus](/llms-full.txt)
+
+## Recent Posts
+
+{% for post in site.posts limit:10 %}
+- [{{ post.title }}]({{ site.url }}{{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
+  {{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}
+{% endfor %}
