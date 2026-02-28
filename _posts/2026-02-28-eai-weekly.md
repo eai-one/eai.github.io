@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "World Models for Robots: Learning to Predict Before Acting"
-date: 2026-02-28 00:00:00 +0900
+date: 2026-02-28 10:00:00 +0900
 comments: false
 categories: embodied-ai world-models robot-learning
 ---
