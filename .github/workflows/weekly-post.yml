@@ -26,9 +26,15 @@ jobs:
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Generate blog post
+      - name: Set up Claude credentials
         env:
           CLAUDE_ACCESS_TOKEN: ${{ secrets.CLAUDE_ACCESS_TOKEN }}
+        run: |
+          mkdir -p ~/.claude
+          printf '{"claudeAiOauth":{"accessToken":"%s"}}\n' "$CLAUDE_ACCESS_TOKEN" \
+            > ~/.claude/.credentials.json
+
+      - name: Generate blog post
         run: python .github/scripts/generate_post.py
 
       - name: Commit and push
