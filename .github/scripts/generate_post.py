@@ -4,9 +4,10 @@ Weekly EAI blog post generator.
 
 import os
 import subprocess
-from datetime import datetime
+import sys
+from datetime import datetime, timezone
 
-TODAY = datetime.utcnow()
+TODAY = datetime.now(timezone.utc)
 DATE_STR = TODAY.strftime("%Y-%m-%d")
 DATE_LONG = TODAY.strftime("%B %d, %Y")
 FILENAME = f"_posts/{DATE_STR}-eai-weekly.md"
@@ -54,11 +55,15 @@ def main():
     print(f"Generating post for {DATE_LONG}...")
 
     result = subprocess.run(
-        ["claude", "-p", PROMPT],
+        ["claude", "-p", PROMPT, "--output-format", "text"],
         capture_output=True,
         text=True,
-        check=True,
     )
+
+    if result.returncode != 0:
+        print("claude stderr:\n", result.stderr, file=sys.stderr)
+        print("claude stdout:\n", result.stdout, file=sys.stderr)
+        sys.exit(result.returncode)
 
     content = result.stdout.strip()
 
