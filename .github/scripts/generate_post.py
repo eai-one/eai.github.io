@@ -1,10 +1,9 @@
 """
 Weekly EAI blog post generator.
-Calls the Anthropic API to write a new post and saves it to _posts/.
 """
 
-import anthropic
 import os
+import subprocess
 from datetime import datetime
 
 TODAY = datetime.utcnow()
@@ -12,7 +11,7 @@ DATE_STR = TODAY.strftime("%Y-%m-%d")
 DATE_LONG = TODAY.strftime("%B %d, %Y")
 FILENAME = f"_posts/{DATE_STR}-eai-weekly.md"
 
-SYSTEM_PROMPT = """You are a technical writer for the EAI.1 Blog (eai.one), a blog about Embodied AI.
+PROMPT = f"""You are a technical writer for the EAI.1 Blog (eai.one), a blog about Embodied AI.
 
 Blog posts use Jekyll with this exact frontmatter:
 ---
@@ -31,9 +30,11 @@ Writing style guidelines:
 - 400–600 words of body content (not counting frontmatter)
 - Include: a one-paragraph intro, 2–4 key developments or concepts, and a brief forward-looking close
 - Do NOT include any markdown headings (##) — use bold + numbered lists for structure instead
-- Output ONLY the raw post content (frontmatter + body). No extra commentary."""
+- Output ONLY the raw post content (frontmatter + body). No extra commentary.
 
-USER_PROMPT = f"""Write a new blog post about recent developments in Embodied AI.
+---
+
+Write a new blog post about recent developments in Embodied AI.
 Today's date is {DATE_LONG}. Use {DATE_STR} in the frontmatter date field.
 
 Pick one focused angle from the areas below — do not try to cover everything:
@@ -50,30 +51,25 @@ Output the complete post, starting with the --- frontmatter block."""
 
 
 def main():
-    client = anthropic.Anthropic()
-
     print(f"Generating post for {DATE_LONG}...")
 
-    message = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=2048,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": USER_PROMPT}],
+    result = subprocess.run(
+        ["claude", "-p", PROMPT],
+        capture_output=True,
+        text=True,
+        check=True,
     )
 
-    content = message.content[0].text.strip()
+    content = result.stdout.strip()
 
-    # Sanity check: must start with Jekyll frontmatter
     if not content.startswith("---"):
-        raise ValueError("Generated content does not start with frontmatter. Aborting.")
+        raise ValueError("Generated content does not start with frontmatter. Aborting.\n" + content[:200])
 
     os.makedirs("_posts", exist_ok=True)
     with open(FILENAME, "w", encoding="utf-8") as f:
         f.write(content + "\n")
 
     print(f"Saved: {FILENAME}")
-    print(f"Input tokens:  {message.usage.input_tokens}")
-    print(f"Output tokens: {message.usage.output_tokens}")
 
 
 if __name__ == "__main__":
