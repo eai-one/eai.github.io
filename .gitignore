@@ -8,3 +8,5 @@ LICENSE
 Gemfile
 Gemfile.lock
 .DS_Store
+.claude/
+scripts/
