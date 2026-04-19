@@ -1,0 +1,41 @@
+---
+layout: null
+permalink: /.well-known/agent-skills/index.json
+---
+{
+  "$schema": "https://agentskills.io/schemas/v0.2.0/index.json",
+  "name": "EAI.1 Blog",
+  "description": "Skills for AI agents to access posts, feeds, and full-text corpus of the EAI.1 blog (Embodied AI).",
+  "skills": [
+    {
+      "name": "llms-index",
+      "type": "llms-txt",
+      "description": "Lightweight index of the EAI.1 blog for LLM consumption: site summary and links to recent posts.",
+      "url": "https://eai.one/llms.txt"
+    },
+    {
+      "name": "llms-full-corpus",
+      "type": "llms-txt",
+      "description": "Full text of every post on the EAI.1 blog, concatenated and ready for LLM ingestion.",
+      "url": "https://eai.one/llms-full.txt"
+    },
+    {
+      "name": "rss-feed",
+      "type": "feed",
+      "description": "Atom/RSS feed of the latest EAI.1 blog posts.",
+      "url": "https://eai.one/feed.xml"
+    },
+    {
+      "name": "json-feed",
+      "type": "feed",
+      "description": "JSON Feed (https://jsonfeed.org) of all EAI.1 blog posts with full content.",
+      "url": "https://eai.one/feed.json"
+    },
+    {
+      "name": "sitemap",
+      "type": "sitemap",
+      "description": "XML sitemap listing every page and post on eai.one.",
+      "url": "https://eai.one/sitemap.xml"
+    }
+  ]
+}

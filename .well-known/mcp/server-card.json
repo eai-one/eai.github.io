@@ -1,0 +1,54 @@
+---
+layout: null
+permalink: /.well-known/mcp/server-card.json
+---
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card.json",
+  "serverInfo": {
+    "name": "eai.one",
+    "title": "EAI.1 Blog",
+    "version": "1.0.0",
+    "description": "Read-only discovery surface for the EAI.1 blog (Embodied AI). Exposes posts, feeds, and the full-text corpus via well-known URLs — no live MCP endpoint."
+  },
+  "capabilities": {
+    "resources": {
+      "listChanged": false,
+      "subscribe": false
+    }
+  },
+  "resources": [
+    {
+      "uri": "https://eai.one/llms.txt",
+      "name": "llms.txt",
+      "description": "Lightweight site index for LLM consumption.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "https://eai.one/llms-full.txt",
+      "name": "llms-full.txt",
+      "description": "Full blog corpus (every post) for LLM ingestion.",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "https://eai.one/feed.xml",
+      "name": "rss-feed",
+      "description": "Atom feed of latest posts.",
+      "mimeType": "application/atom+xml"
+    },
+    {
+      "uri": "https://eai.one/feed.json",
+      "name": "json-feed",
+      "description": "JSON Feed of all posts with full content.",
+      "mimeType": "application/feed+json"
+    },
+    {
+      "uri": "https://eai.one/sitemap.xml",
+      "name": "sitemap",
+      "description": "Sitemap listing every page and post.",
+      "mimeType": "application/xml"
+    }
+  ],
+  "contact": {
+    "url": "https://eai.one/about"
+  }
+}

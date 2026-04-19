@@ -1,0 +1,44 @@
+---
+layout: null
+permalink: /.well-known/api-catalog
+---
+{
+  "linkset": [
+    {
+      "anchor": "https://eai.one/feed.json",
+      "service-doc": [
+        { "href": "https://www.jsonfeed.org/version/1.1/", "title": "JSON Feed v1.1 spec" }
+      ],
+      "service-desc": [
+        { "href": "https://eai.one/feed.json", "type": "application/feed+json", "title": "EAI.1 Blog JSON Feed" }
+      ]
+    },
+    {
+      "anchor": "https://eai.one/feed.xml",
+      "service-doc": [
+        { "href": "https://validator.w3.org/feed/docs/atom.html", "title": "Atom 1.0 spec" }
+      ],
+      "service-desc": [
+        { "href": "https://eai.one/feed.xml", "type": "application/atom+xml", "title": "EAI.1 Blog Atom feed" }
+      ]
+    },
+    {
+      "anchor": "https://eai.one/sitemap.xml",
+      "service-desc": [
+        { "href": "https://eai.one/sitemap.xml", "type": "application/xml", "title": "EAI.1 Blog sitemap" }
+      ]
+    },
+    {
+      "anchor": "https://eai.one/llms.txt",
+      "service-desc": [
+        { "href": "https://eai.one/llms.txt", "type": "text/markdown", "title": "EAI.1 Blog llms.txt index" }
+      ]
+    },
+    {
+      "anchor": "https://eai.one/llms-full.txt",
+      "service-desc": [
+        { "href": "https://eai.one/llms-full.txt", "type": "text/markdown", "title": "EAI.1 Blog full corpus for LLMs" }
+      ]
+    }
+  ]
+}

@@ -37,6 +37,7 @@ titles_from_headings:
 
 include:
     - _pages
+    - .well-known
 
 exclude:
   - .gitignore

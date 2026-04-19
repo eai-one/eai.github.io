@@ -11,36 +11,90 @@
   <!-- End Google Analytics -->
   {%- endif %}
 
-  <!-- Web Model Context Protocol (WebMCP) Declaration -->
-  <script type="application/mcp+json">
-  {
-    "mcpVersion": "1.0",
-    "tools": [
-      {
-        "name": "search_blog",
-        "description": "Searches the EAI blog by redirecting the query to Google with a site:eai.one filter. Use this to find articles by topic.",
-        "inputSchema": {
-          "type": "object",
-          "properties": {
-            "query": {
-              "type": "string",
-              "description": "The search term to query the blog for."
+  <!-- Discovery links for AI agents -->
+  <link rel="api-catalog" href="/.well-known/api-catalog" type="application/linkset+json">
+  <link rel="alternate" type="text/markdown" title="llms.txt" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" title="Full blog corpus (llms-full.txt)" href="/llms-full.txt">
+
+  <!-- Web Model Context Protocol (WebMCP) -->
+  <!-- Spec: https://webmachinelearning.github.io/webmcp/ -->
+  <script>
+  (function () {
+    if (!('modelContext' in navigator) || !navigator.modelContext ||
+        typeof navigator.modelContext.provideContext !== 'function') {
+      return;
+    }
+    navigator.modelContext.provideContext({
+      tools: [
+        {
+          name: 'search_blog',
+          description: 'Search the EAI.1 blog (eai.one). Opens a Google site-search for the given query in a new tab.',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              query: { type: 'string', description: 'Search terms.' }
+            },
+            required: ['query']
+          },
+          execute: async ({ query }) => {
+            const url = 'https://www.google.com/search?q=' +
+              encodeURIComponent('site:eai.one ' + query);
+            window.open(url, '_blank', 'noopener');
+            return { content: [{ type: 'text', text: 'Opened search for: ' + query }] };
+          }
+        },
+        {
+          name: 'list_recent_posts',
+          description: 'List recent EAI.1 blog posts (title, url, date, summary) from the JSON feed.',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              limit: { type: 'integer', minimum: 1, maximum: 50, default: 10 }
             }
           },
-          "required": ["query"]
+          execute: async ({ limit = 10 } = {}) => {
+            const res = await fetch('/feed.json', { headers: { accept: 'application/feed+json' } });
+            const feed = await res.json();
+            const items = (feed.items || []).slice(0, limit).map(i => ({
+              title: i.title,
+              url: i.url,
+              date: i.date_published,
+              summary: i.summary
+            }));
+            return { content: [{ type: 'text', text: JSON.stringify(items, null, 2) }] };
+          }
         },
-        "urlTemplate": "https://www.google.com/search?q=site:eai.one+{query}"
-      },
-      {
-        "name": "get_feed",
-        "description": "Fetches the full XML feed of the latest blog posts. This contains the content of all recent articles.",
-        "inputSchema": {
-          "type": "object",
-          "properties": {}
+        {
+          name: 'get_full_corpus',
+          description: 'Fetch the full text of every EAI.1 blog post as a single markdown document (llms-full.txt).',
+          inputSchema: { type: 'object', properties: {} },
+          execute: async () => {
+            const res = await fetch('/llms-full.txt');
+            const text = await res.text();
+            return { content: [{ type: 'text', text }] };
+          }
         },
-        "urlTemplate": "https://eai.one/feed.xml"
-      }
-    ]
-  }
+        {
+          name: 'navigate_to_post',
+          description: 'Navigate the current tab to a specific EAI.1 blog post URL.',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              url: { type: 'string', description: 'Absolute URL on eai.one, or a path starting with /' }
+            },
+            required: ['url']
+          },
+          execute: async ({ url }) => {
+            const target = new URL(url, 'https://eai.one');
+            if (target.hostname !== 'eai.one') {
+              return { content: [{ type: 'text', text: 'Refused: URL is not on eai.one' }], isError: true };
+            }
+            window.location.href = target.toString();
+            return { content: [{ type: 'text', text: 'Navigating to ' + target.toString() }] };
+          }
+        }
+      ]
+    });
+  })();
   </script>
 </head>
